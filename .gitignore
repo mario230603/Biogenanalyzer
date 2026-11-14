@@ -1,0 +1,13 @@
+# Entornos virtuales y credenciales (Backend)
+.venv/
+.env
+.env.*
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos del sistema operativo o editor
+.DS_Store
+Thumbs.db

@@ -2,8 +2,8 @@
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.db.database import verificar_conexion
-
+from app.db.database import verificar_conexion, engine
+from app.api.auth import router as auth_router
 
 app = FastAPI(
     title="BioGenAnalyzer API",
@@ -21,6 +21,8 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Registrar las rutas de autenticación
+app.include_router(auth_router)
 
 # Endpoint principal
 @app.get("/")
@@ -46,7 +48,7 @@ def verificar_base_datos():
 
         return {
             "estado": "conectado",
-            "base_de_datos": "login",
+            "base_de_datos": engine.url.database,
             "prueba": resultado
         }
 
