@@ -1,7 +1,9 @@
 # Entornos virtuales y credenciales (Backend)
 .venv/
 .env
+**/.env
 .env.*
+**/.env.*
 
 # Archivos temporales de Python
 __pycache__/
