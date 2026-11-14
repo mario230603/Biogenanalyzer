@@ -8,8 +8,8 @@ import {
 
 import Login from './pages/Login'
 import Registro from './pages/Registro'
-
 import Layout from './components/Layout'
+import ProtectedRoute from './components/ProtectedRoute'
 
 import Menu from './pages/Menu'
 import Analisis from './pages/Analisis'
@@ -20,57 +20,23 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
+        {/* Rutas públicas */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/registro" element={<Registro />} />
 
-        {/* RUTAS SIN ENCABEZADO NI BARRA LATERAL */}
-
-        <Route
-          path="/"
-          element={<Navigate to="/login" replace />}
-        />
-
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-
-        <Route
-          path="/registro"
-          element={<Registro />}
-        />
-
-        {/* RUTAS QUE COMPARTEN EL LAYOUT */}
-
-        <Route element={<Layout />}>
-
-          <Route
-            path="/menu"
-            element={<Menu />}
-          />
-
-          <Route
-            path="/analisis"
-            element={<Analisis />}
-          />
-
-          <Route
-            path="/riesgo"
-            element={<Riesgo />}
-          />
-
-          <Route
-            path="/ncbi"
-            element={<Ncbi />}
-          />
-
+        {/* Rutas protegidas */}
+        <Route element={<ProtectedRoute />}>
+          <Route element={<Layout />}>
+            <Route path="/menu" element={<Menu />} />
+            <Route path="/analisis" element={<Analisis />} />
+            <Route path="/riesgo" element={<Riesgo />} />
+            <Route path="/ncbi" element={<Ncbi />} />
+          </Route>
         </Route>
 
-        {/* RUTA PARA DIRECCIONES NO EXISTENTES */}
-
-        <Route
-          path="*"
-          element={<Navigate to="/login" replace />}
-        />
-
+        {/* Ruta no encontrada */}
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
     </BrowserRouter>
   )

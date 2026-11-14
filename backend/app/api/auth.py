@@ -12,6 +12,8 @@ from app.core.security import (
     create_access_token
 )
 
+from app.core.dependencies import get_current_user
+
 router = APIRouter(
     prefix="/auth",
     tags=["Autenticación"]
@@ -93,3 +95,10 @@ def iniciar_sesion(
         "access_token": access_token,
         "token_type": "bearer"
     }
+
+
+@router.get("/me", response_model=UserResponse)
+def obtener_usuario_actual(
+    usuario: User = Depends(get_current_user)
+):
+    return usuario

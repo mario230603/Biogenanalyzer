@@ -1,14 +1,17 @@
-
 import { Form, InputGroup, Button } from 'react-bootstrap'
-import { NavLink, Outlet, useNavigate } from 'react-router-dom'
+// 1. Agregamos useOutletContext a la importación
+import { NavLink, Outlet, useNavigate, useOutletContext } from 'react-router-dom'
 
 export default function Layout() {
   const navigate = useNavigate()
+  
+  // 2. Recibimos los datos del usuario que nos mandó ProtectedRoute
+  const usuario = useOutletContext()
 
-  // Cerrar sesión: por ahora regresa al login.
-  // Más adelante conectaremos esta acción con la autenticación.
+  // Cerrar sesión: elimina el token y redirige al login sin dejar historial
   const handleLogout = () => {
-    navigate('/login')
+    sessionStorage.removeItem('access_token')
+    navigate('/login', { replace: true })
   }
 
   // Estilos para identificar la opción activa de la barra lateral.
@@ -69,12 +72,14 @@ export default function Layout() {
 
         {/* Usuario y cierre de sesión */}
         <div className="d-flex align-items-center gap-3">
+          {/* 3. Cambiamos "Usuario de Prueba" por los datos reales del usuario */}
           <span className="fw-bold">
             <i className="fas fa-user me-2"></i>
-            Usuario de Prueba
+            {usuario?.nombre} {usuario?.apellido}
           </span>
 
           <Button
+            type="button"
             variant="primary"
             onClick={handleLogout}
             className="fw-bold px-3"
@@ -156,7 +161,8 @@ export default function Layout() {
             backgroundColor: '#f4f6f9',
           }}
         >
-          <Outlet />
+          {/* 4. Pasamos los datos del usuario hacia adentro (hacia Menu, Analisis, etc.) */}
+          <Outlet context={usuario} />
         </main>
 
       </div>
