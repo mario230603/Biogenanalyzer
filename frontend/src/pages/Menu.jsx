@@ -21,7 +21,7 @@ export default function Menu() {
       ruta: '/riesgo',
     },
     {
-      titulo: 'Consulta NCBI',
+      titulo: 'Análisis Génico y Proteico',
       descripcion:
         'Consulta información genética mediante identificadores de genes y la API de NCBI.',
       imagen: '/ncbi.webp',

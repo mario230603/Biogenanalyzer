@@ -147,7 +147,7 @@ export default function Layout() {
                 className="fas fa-database me-2"
                 style={{ width: '20px' }}
               ></i>
-              Consulta NCBI
+              Análisis Génico
             </NavLink>
 
           </nav>

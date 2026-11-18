@@ -48,3 +48,51 @@ export function obtenerUsuarioActual(token) {
     },
   })
 }
+
+// Consultar genes en NCBI
+export function buscarGenes(datosBusqueda) {
+  const token = sessionStorage.getItem('access_token')
+
+  return solicitar('/ncbi/genes', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(datosBusqueda),
+  })
+}
+
+// Consultar las secuencias proteicas de un gen
+export function obtenerSecuenciasProteinas(geneId) {
+  const token = sessionStorage.getItem('access_token')
+
+  return solicitar(`/ncbi/genes/${geneId}/proteinas/secuencias`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}
+
+
+export function obtenerDetalleGenomico(geneId) {
+  const token = sessionStorage.getItem('access_token')
+
+  return solicitar(`/ncbi/genes/${geneId}/detalle`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}
+
+export function obtenerAnotacionesProteinas(geneId) {
+  const token = sessionStorage.getItem('access_token')
+
+  return solicitar(`/ncbi/genes/${geneId}/proteinas/anotaciones`, {
+    method: 'GET',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  })
+}

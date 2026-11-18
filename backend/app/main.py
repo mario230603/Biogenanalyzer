@@ -4,6 +4,7 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from app.db.database import verificar_conexion, engine
 from app.api.auth import router as auth_router
+from app.api.ncbi import router as ncbi_router
 
 app = FastAPI(
     title="BioGenAnalyzer API",
@@ -23,6 +24,7 @@ app.add_middleware(
 
 # Registrar las rutas de autenticación
 app.include_router(auth_router)
+app.include_router(ncbi_router)
 
 # Endpoint principal
 @app.get("/")
