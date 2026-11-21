@@ -1,0 +1,10 @@
+modelo,estrategia,folds_con_umbral,umbral_mean,umbral_std,umbral_min,umbral_max
+HistGradientBoosting,F1_clase_1,5,0.648,0.008366600265340763,0.64,0.66
+HistGradientBoosting,F1_macro,5,0.7,0.014142135623730925,0.68,0.71
+HistGradientBoosting,F1_macro_precision_minima,5,0.7,0.014142135623730925,0.68,0.71
+Random_Forest,F1_clase_1,5,0.6239999999999999,0.021908902300206663,0.59,0.65
+Random_Forest,F1_macro,5,0.6839999999999999,0.005477225575051605,0.68,0.69
+Random_Forest,F1_macro_precision_minima,5,0.6839999999999999,0.005477225575051605,0.68,0.69
+Regresion_Logistica,F1_clase_1,5,0.6159999999999999,0.021908902300206663,0.59,0.65
+Regresion_Logistica,F1_macro,5,0.6819999999999999,0.013038404810405253,0.67,0.7
+Regresion_Logistica,F1_macro_precision_minima,5,0.6819999999999999,0.013038404810405253,0.67,0.7

@@ -1,0 +1,28 @@
+{
+    "Regresion_Logistica": {
+        "hiperparametros": {
+            "C": 0.01
+        },
+        "f1_macro_promedio": 0.6323957872292262
+    },
+    "Random_Forest": {
+        "hiperparametros": {
+            "n_estimators": 200,
+            "min_samples_split": 10,
+            "min_samples_leaf": 20,
+            "max_features": 0.5,
+            "max_depth": 15
+        },
+        "f1_macro_promedio": 0.6353266033894635
+    },
+    "HistGradientBoosting": {
+        "hiperparametros": {
+            "min_samples_leaf": 30,
+            "max_leaf_nodes": 63,
+            "max_iter": 150,
+            "learning_rate": 0.1,
+            "l2_regularization": 0.5
+        },
+        "f1_macro_promedio": 0.6280973307312635
+    }
+}

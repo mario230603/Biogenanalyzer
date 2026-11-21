@@ -1,0 +1,7 @@
+modelo,estrategia,umbral,TN,FP,FN,TP
+Regresion_Logistica,F1_macro,0.67,37613,6054,3159,3911
+Regresion_Logistica,F1_clase_1,0.61,35641,8026,2565,4505
+Random_Forest,F1_macro,0.68,38249,5418,3266,3804
+Random_Forest,F1_clase_1,0.62,36248,7419,2668,4402
+HistGradientBoosting,F1_macro,0.71,38688,4979,3386,3684
+HistGradientBoosting,F1_clase_1,0.65,36532,7135,2690,4380

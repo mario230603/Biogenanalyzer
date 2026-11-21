@@ -1,0 +1,80 @@
+{
+    "Regresion_Logistica": {
+        "F1_macro": {
+            "umbral": 0.67,
+            "f1_macro": 0.6727872982522174,
+            "f1_clase_1": 0.45557151651959776,
+            "precision_clase_1": 0.38902518399839786,
+            "recall_clase_1": 0.5495826849625124,
+            "balanced_accuracy": 0.7049269719934137
+        },
+        "F1_clase_1": {
+            "umbral": 0.61,
+            "f1_macro": 0.6653300675393472,
+            "f1_clase_1": 0.46003237689768134,
+            "precision_clase_1": 0.3596412556053812,
+            "recall_clase_1": 0.6381737162257745,
+            "balanced_accuracy": 0.727111842798031
+        },
+        "F1_macro_precision_minima": {
+            "umbral": 0.67,
+            "f1_macro": 0.6727872982522174,
+            "f1_clase_1": 0.45557151651959776,
+            "precision_clase_1": 0.38902518399839786,
+            "recall_clase_1": 0.5495826849625124,
+            "balanced_accuracy": 0.7049269719934137
+        }
+    },
+    "Random_Forest": {
+        "F1_macro": {
+            "umbral": 0.68,
+            "f1_macro": 0.6788182758828701,
+            "f1_clase_1": 0.4607569293102919,
+            "precision_clase_1": 0.40700070495092455,
+            "recall_clase_1": 0.5308742396378554,
+            "balanced_accuracy": 0.7028294148717997
+        },
+        "F1_clase_1": {
+            "umbral": 0.62,
+            "f1_macro": 0.6711983852707444,
+            "f1_clase_1": 0.46550680388492616,
+            "precision_clase_1": 0.37069796688325296,
+            "recall_clase_1": 0.6254774366954308,
+            "balanced_accuracy": 0.7267923174820682
+        },
+        "F1_macro_precision_minima": {
+            "umbral": 0.68,
+            "f1_macro": 0.6788182758828701,
+            "f1_clase_1": 0.4607569293102919,
+            "precision_clase_1": 0.40700070495092455,
+            "recall_clase_1": 0.5308742396378554,
+            "balanced_accuracy": 0.7028294148717997
+        }
+    },
+    "HistGradientBoosting": {
+        "F1_macro": {
+            "umbral": 0.71,
+            "f1_macro": 0.6816419611857685,
+            "f1_clase_1": 0.46227715711908723,
+            "precision_clase_1": 0.4187889402509403,
+            "recall_clase_1": 0.5158438251520724,
+            "balanced_accuracy": 0.6999745040787242
+        },
+        "F1_clase_1": {
+            "umbral": 0.65,
+            "f1_macro": 0.6759393010417036,
+            "f1_clase_1": 0.47057082509316434,
+            "precision_clase_1": 0.37974161328845946,
+            "recall_clase_1": 0.618510397510256,
+            "balanced_accuracy": 0.7274824540466256
+        },
+        "F1_macro_precision_minima": {
+            "umbral": 0.71,
+            "f1_macro": 0.6816419611857685,
+            "f1_clase_1": 0.46227715711908723,
+            "precision_clase_1": 0.4187889402509403,
+            "recall_clase_1": 0.5158438251520724,
+            "balanced_accuracy": 0.6999745040787242
+        }
+    }
+}

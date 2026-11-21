@@ -96,3 +96,16 @@ export function obtenerAnotacionesProteinas(geneId) {
     },
   })
 }
+
+// Realizar predicción de diabetes mediante Machine Learning
+export function predecirDiabetes(datosPrediccion) {
+  const token = sessionStorage.getItem('access_token')
+
+  return solicitar('/api/diabetes/predict', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+    body: JSON.stringify(datosPrediccion),
+  })
+}
